@@ -224,6 +224,8 @@ nav img {
     height: 25.80%;
     overflow: hidden;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .main-add img {
@@ -427,7 +429,6 @@ nav img {
 }
 .outer{
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -442,6 +443,7 @@ nav img {
 }
 .image img{
     width: 200px;
+    border-radius: 10px;
 }
 
 /* contact page css */
