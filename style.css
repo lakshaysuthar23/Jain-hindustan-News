@@ -28,6 +28,37 @@ body {
     background: url(img/paper-background.jpg) center;
 
 }
+/* slider */
+.slider {
+    background-color: rgb(255, 174, 0);
+    color: black;
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.slider-content {
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    min-width: 100vw;
+    animation: slider 20s linear infinite;
+}
+
+@keyframes slider {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 
 /* header css */
 header {
@@ -369,8 +400,8 @@ nav img {
     padding: 50px;
     background: rgba(255, 255, 255, 0.13);
     border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(53, 52, 52, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.53);
+    box-shadow: 0 4px 30px rgba(53, 52, 52, 0.1);
 }
 
 #outer h1 {
@@ -391,6 +422,28 @@ nav img {
     margin-right: 50px;
     width: 200px;
 }
+.content-img{
+    border-radius: 20px;
+}
+.outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    font-size: 14px;
+    text-align: center;
+    margin: 10px;
+}
+.image img{
+    width: 200px;
+}
+
 /* contact page css */
 
 .contact-main {
@@ -456,6 +509,11 @@ nav img {
 submit{
     text-align: center;
 }
+/* latest page content */
+.latestpage{
+    width: 80%;
+    margin: 20px auto;
+}
 
 @media (min-width:200px) and (max-width:500px) {
     nav ul li {
@@ -492,19 +550,10 @@ submit{
         width: 14px;
         margin: 2px;
     }
-    
-
-    #logo1 {
-        
-    }
 
     #logo2 {
         width: 75%;
         margin-bottom: 10px;
-    }
-
-    #logo3 {
-        
     }
 
     .ribbon img {
@@ -513,6 +562,10 @@ submit{
 
     .ribbon h2 {
         font-size: 0.8em;
+    }
+    /* main add */
+    .main-add{
+        width: 95%;
     }
 
     /* footer */
