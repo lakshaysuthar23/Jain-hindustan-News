@@ -30,12 +30,12 @@ body {
 }
 /* slider */
 .slider {
-    background-color: rgb(255, 174, 0);
-    color: black;
+    background-color: red;
+    color: white;
     width: 100%;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
-    height: 20px;
+    height: 40px;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
