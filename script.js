@@ -49,3 +49,15 @@ document.addEventListener("DOMContentLoaded", function () {
         isExpanded = !isExpanded;
     });
 });
+// read full article button 
+document.getElementById('toggleContent').addEventListener('click', function(){
+    var content = document.querySelector('.hidden-content')
+    if(content.style.display === "none"){
+        content.style.display = 'block';
+        this.textContent = 'Hide Content'
+    }else{
+        content.style.display = 'none';
+        this.textContent = "Read full article"
+    }
+
+})
