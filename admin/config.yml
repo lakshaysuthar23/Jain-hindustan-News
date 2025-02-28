@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: lakshaysuthar23/Jain-hindustan-News
   branch: main  # Your main GitHub branch
 
 media_folder: "img/uploads"  # Where uploaded images go
