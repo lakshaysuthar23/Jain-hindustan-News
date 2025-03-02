@@ -5,35 +5,35 @@ const formateDate = today.toLocaleDateString('en-US', options);
 document.getElementById("date-today").textContent = formateDate;
 
 // for main add
-// let ads = [
-//     document.getElementById("ad1"),
-//     document.getElementById("ad2"),
-//     document.getElementById("ad3"),
-//     document.getElementById("ad4"),
-//     document.getElementById("ad5"),
-// ];
+let ads = [
+    document.getElementById("ad1"),
+    document.getElementById("ad2"),
+    document.getElementById("ad3"),
+    document.getElementById("ad4"),
+    document.getElementById("ad5"),
+];
 
-// let currentIndex = 0;
+let currentIndex = 0;
 
-// function showNextAd() {
-//     // Hide all ads
-//     ads.forEach(ad => ad.style.display = "none");
+function showNextAd() {
+    // Hide all ads
+    ads.forEach(ad => ad.style.display = "none");
     
-//     // Show the current ad
-//     ads[currentIndex].style.display = "block";
+    // Show the current ad
+    ads[currentIndex].style.display = "block";
 
-//     // Move to the next index, reset if at the end
-//     currentIndex = (currentIndex + 1) % ads.length;
-// }
+    // Move to the next index, reset if at the end
+    currentIndex = (currentIndex + 1) % ads.length;
+}
 
-// // Ensure DOM is fully loaded before executing the script
-// document.addEventListener("DOMContentLoaded", function () {
-//     // Initial call to show the first ad
-//     showNextAd();
+// Ensure DOM is fully loaded before executing the script
+document.addEventListener("DOMContentLoaded", function () {
+    // Initial call to show the first ad
+    showNextAd();
 
-//     // Change ad every 6 seconds
-//     setInterval(showNextAd, 3000);
-// });
+    // Change ad every 6 seconds
+    setInterval(showNextAd, 5000);
+});
 
 // categories show more button function
 document.addEventListener("DOMContentLoaded", function () {
@@ -52,12 +52,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // read full article button 
 document.getElementById('toggleContent').addEventListener('click', function(){
     var content = document.querySelector('.hidden-content')
-    if(content.style.display === "none"){
-        content.style.display = 'block';
-        this.textContent = 'Hide Content'
-    }else{
-        content.style.display = 'none';
-        this.textContent = "Read full article"
+    var computedStyle = window.getComputedStyle(content).display;
+    if (computedStyle === "none") {
+        content.style.display = "block";
+        this.textContent = "Hide article"; // Change button text
+    } else {
+        content.style.display = "none";
+        this.textContent = "Read full article"; // Change back button text
     }
 
 })
+ 

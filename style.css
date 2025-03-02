@@ -533,6 +533,21 @@ submit{
 #toggleContent{
     display: none;
 }
+
+/* epaper contetn */
+.epaper-content{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.epaper-preview{
+    margin: 20px auto;
+}
+.epaper-preview iframe{
+    height: 1000px;
+}
+
+
 @media (max-width:1400px){
     .article{
         flex-direction: column;
@@ -574,7 +589,7 @@ submit{
         width: 14px;
         margin: 2px;
     }
-
+    
     #logo2 {
         width: 75%;
         margin-bottom: 10px;
@@ -705,6 +720,13 @@ submit{
     }
     #toggleContent{
         display: block;
+    }
+    /* epaper page */
+    .epaper-content{
+        width: 95%;
+    }
+    .epaper-preview iframe{
+        height: 550px;
     }
 }
 @media (max-width:800px){
