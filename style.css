@@ -547,6 +547,32 @@ submit{
     height: 1000px;
 }
 
+/* index page ka holi section */
+.holi{
+    padding: 5px;
+    background: url(img/holi-2025-banner.webp) center center/cover no-repeat;
+    width: 80%;
+    height: 1000px;
+    margin: 20px auto;
+}
+.holi h1{
+    text-shadow: 5px 5px 12px rgb(0, 0, 0);
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+
+}
+/* media only fo rholi container */
+@media (max-width:2000px){
+    .holi{
+        height: 800px;
+    }
+}
+@media (max-width:1500px){
+    .holi{
+        height: 600px;
+    }
+}
 
 @media (max-width:1400px){
     .article{
@@ -674,8 +700,8 @@ submit{
     }
 
     .video-container iframe {
-        width: 200px;
-        height: 120px;
+        width: 320px;
+        height: 190px;
         border-radius: 10px;
     }
 
@@ -728,6 +754,14 @@ submit{
     .epaper-preview iframe{
         height: 550px;
     }
+    /* holi banner */
+    .holi{
+        width: 95%;
+        height: 400px;
+
+    }
+    .holi h1{
+    font-size: 2rem;
 }
 @media (max-width:800px){
     .content{
