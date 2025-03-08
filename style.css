@@ -28,6 +28,7 @@ body {
     background: url(img/paper-background.jpg) center;
 
 }
+
 /* slider */
 .slider {
     background-color: red;
@@ -55,6 +56,7 @@ body {
     0% {
         transform: translateX(100%);
     }
+
     100% {
         transform: translateX(-100%);
     }
@@ -421,19 +423,23 @@ nav img {
     justify-content: center;
     align-items: center;
 }
-#content img{
+
+#content img {
     margin-right: 50px;
     width: 200px;
 }
-.content-img{
+
+.content-img {
     border-radius: 20px;
 }
-.outer{
+
+.outer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.image{
+
+.image {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -442,7 +448,8 @@ nav img {
     text-align: center;
     margin: 10px;
 }
-.image img{
+
+.image img {
     width: 200px;
     border-radius: 10px;
 }
@@ -509,15 +516,18 @@ nav img {
 .feedback textarea::placeholder {
     color: rgb(0, 0, 0);
 }
-submit{
+
+submit {
     text-align: center;
 }
+
 /* latest page content */
-.latestpage{
+.latestpage {
     width: 80%;
     margin: 20px auto;
 }
-.article{
+
+.article {
     margin-bottom: 50px;
     background-color: white;
     border-radius: 20px;
@@ -527,55 +537,98 @@ submit{
     align-items: center;
     gap: 20px;
 }
-.article img{
+
+.article img {
     width: 470px;
 }
-#toggleContent{
+
+#toggleContent {
     display: none;
 }
 
 /* epaper contetn */
-.epaper-content{
+.epaper-content {
     width: 80%;
     margin: 0 auto;
     text-align: center;
 }
-.epaper-preview{
+
+.epaper-preview {
     margin: 20px auto;
 }
-.epaper-preview iframe{
+
+.epaper-preview iframe {
     height: 1000px;
 }
 
 /* index page ka holi section */
-.holi{
+.holi {
     padding: 5px;
     background: url(img/holi-2025-banner.webp) center center/cover no-repeat;
     width: 80%;
     height: 1000px;
     margin: 20px auto;
+    overflow: hidden;
+    position: relative;
 }
-.holi h1{
+
+.holi h1 {
     text-shadow: 5px 5px 12px rgb(0, 0, 0);
     font-size: 3rem;
     color: white;
     text-align: center;
 
 }
-/* media only fo rholi container */
-@media (max-width:2000px){
-    .holi{
+#holi1{
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+#holi2{
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+.holi p{
+    font-size: 2rem;
+    color: rgb(35, 255, 72);
+    text-shadow: 2px 2px 10px black;
+    text-align: center;
+    font-weight: bold;
+}
+.holi img{
+    width: 320px;
+    margin: 5px;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+}
+
+/* media queries only fo holi banner */
+@media (max-width:2000px) {
+    .holi {
         height: 800px;
     }
 }
-@media (max-width:1500px){
-    .holi{
+
+@media (max-width:1500px) {
+    .holi {
         height: 600px;
     }
+    .holi img{
+        width: 200px;
+    }
 }
+@media (max-width:1000px) {
+    .holi img{
+        width: 150px;
+    }
+}
+/* whole website media start from here */
 
-@media (max-width:1400px){
-    .article{
+@media (max-width:1400px) {
+    .article {
         flex-direction: column;
     }
 }
@@ -597,7 +650,7 @@ submit{
     .hidden-category {
         display: none;
     }
-    
+
     #toggleCategories {
         display: block;
         border: none;
@@ -615,7 +668,7 @@ submit{
         width: 14px;
         margin: 2px;
     }
-    
+
     #logo2 {
         width: 75%;
         margin-bottom: 10px;
@@ -628,8 +681,9 @@ submit{
     .ribbon h2 {
         font-size: 0.8em;
     }
+
     /* main add */
-    .main-add{
+    .main-add {
         width: 95%;
     }
 
@@ -734,61 +788,80 @@ submit{
     .card-text p {
         display: none;
     }
+
     /* latest articles */
-    .latestpage{
+    .latestpage {
         width: 95%;
     }
-    .article img{
+
+    .article img {
         width: 100%;
     }
-    .hidden-content{
+
+    .hidden-content {
         display: none;
     }
-    #toggleContent{
+
+    #toggleContent {
         display: block;
     }
+
     /* epaper page */
-    .epaper-content{
+    .epaper-content {
         width: 95%;
     }
-    .epaper-preview iframe{
+
+    .epaper-preview iframe {
         height: 550px;
     }
+
     /* holi banner */
-    .holi{
+    .holi {
         width: 95%;
-        height: 400px;
+        height: 350px;
 
     }
-    .holi h1{
-    font-size: 2rem;
+
+    .holi h1 {
+        font-size: 1.5rem;
+    }
+    .holi img{
+        width: 90px;
+    }
 }
-@media (max-width:800px){
-    .content{
+
+@media (max-width:800px) {
+    .content {
         display: flex;
         flex-direction: column;
     }
-    #outer{
+
+    #outer {
         width: 100%;
         margin: 20px 0;
     }
-    .sec1{
+
+    .sec1 {
         padding: 20px 20px;
     }
-    #content img{
+
+    #content img {
         margin-right: 0px;
         margin: 20px 0;
         width: 200px;
     }
-    .contact-main{
+
+    .contact-main {
         padding: 30px 20px;
     }
+
     .contacts {
         margin: 0 auto;
         width: 100%;
         font-size: 12px;
         padding: 20px;
     }
+
     .feedback {
         width: 100%;
         padding: 20px 30px;
