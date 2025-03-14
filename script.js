@@ -50,16 +50,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 // read full article button 
-document.getElementById('toggleContent').addEventListener('click', function(){
-    var content = document.querySelector('.hidden-content')
-    var computedStyle = window.getComputedStyle(content).display;
-    if (computedStyle === "none") {
-        content.style.display = "block";
-        this.textContent = "Hide article"; // Change button text
-    } else {
-        content.style.display = "none";
-        this.textContent = "Read full article"; // Change back button text
-    }
+document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('click', function (event) {
+        if (event.target.matches('.toggleContent')) { 
+            var content = event.target.previousElementSibling.querySelector('.hidden-content'); 
+            var computedStyle = window.getComputedStyle(content).display;
 
-})
+            if (computedStyle === "none") {
+                content.style.display = "block";
+                event.target.textContent = "Hide article"; // Change button text
+            } else {
+                content.style.display = "none";
+                event.target.textContent = "Read full article"; // Change back button text
+            }
+        }
+    });
+});
+
  

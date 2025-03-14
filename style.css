@@ -528,7 +528,7 @@ submit {
 }
 
 .article {
-    margin-bottom: 50px;
+    margin: 10px auto;
     background-color: white;
     border-radius: 20px;
     padding: 10px;
@@ -537,12 +537,12 @@ submit {
     align-items: center;
     gap: 20px;
 }
-
 .article img {
+    border-radius: 10px;
     width: 470px;
 }
 
-#toggleContent {
+.toggleContent {
     display: none;
 }
 
@@ -802,8 +802,9 @@ submit {
         display: none;
     }
 
-    #toggleContent {
+    .toggleContent {
         display: block;
+        margin: 0;
     }
 
     /* epaper page */
@@ -827,9 +828,6 @@ submit {
     }
     .holi img{
         width: 90px;
-    }
-    .holi p{
-        font-size: 1.2rem;
     }
 }
 
