@@ -79,36 +79,45 @@
     <section class="main-add">
         <video src="vid/advertise/shanti-prime.mp4" autoplay muted loop style="width: 80%; height: auto; margin: 0 auto;"></video>
     </section>
-
+    
     <!-- latest page content -->
-    <div class="latestpage">
+    <div class="latestpage" id="latestpage">
         <h1 style="margin-bottom: 20px; text-align: center;">Latest News</h1>
-        <div class="article">
-            <img src="img/articles-img/IMG-20250228-WA0001.webp" alt="article-img">
-            <div class="article-text">
-                <h2 style="margin-bottom: 10px;">जैन हिंदुस्तान न्यूज़ सहजता के साथ जन जागृति का धोतक- श्री सुरेन्द्र
-                    बद्धानी</h2>
-                <p class="hidden-content" style="font-size: 20px;"> बीकानेर 28 फरवरी 2025-आज दोपहर वरिष्ठ समाजसेवी
-                    उद्यमी श्री सुरेन्द्र बद्धानी द्वारा *जैन हिंदुस्तान
-                    न्यूज़ की नई वेबसाइट का लोकार्पण* किया गया। इस अवसर पर श्री सुरेन्द्र बद्धानी द्वारा कहा गया कि आज के
-                    समय में जैन हिंदुस्तान न्यूज़ एक सार्थक और समाज उपयोगी समाचार का अच्छा प्रसारण कर समाज को सार्वभौमिक
-                    समाचारों से अवगत करवाता आ रहा है अतः आज इस समाचार पत्र की वेबसाइट का लोकार्पण कर में अपने आप को
-                    गोरांवित महसूस कर रहा हूं ।
-                    देश का चौथा स्तंभ आज सही दिशा देने का कार्य कर रहा है लेकिन वह कुछ चैनल और समाचार पत्र के माध्यम से
-                    ही हो रहा है चौथे स्तंभ पर भी कई बार सवालया निशान उठाते रहे हैं, लेकिन यह मैै दावे के साथ कह सकता
-                    हूं कि यह जैन हिंदुस्तान समाचार पत्र और उसकी वेबसाइट जिसका आज मेरे द्वारा लोकार्पण किया जा रहा है आप
-                    देश और समाज के बड़े आईने के रूप में कार्य करेंगे
-                    ऐसी आशा करता हूं और आज के इस अवसर पर जैन हिंदुस्तान न्यूज की पूरी टीम को बहुत-बहुत शुभकामनाएं प्रदान
-                    करता हूं
-                    आज के कार्यक्रम में जैन हिंदुस्तान न्यूज़ के प्रधान संपादक श्री वीरेन्द्र अभाणी , सह- संपादक श्री
-                    राजेश आचार्य, राजस्थान चीफ श्री प्रमोद कौशिक और लक्ष्य सुथार वेबसाइट डिज़ाइनर उपस्थित रहे। <br>
-                    <b>Date : 28 Feb, 2025</b>
-                </p>
-                <button id="toggleContent">Read full article</button>
-            </div>
-        </div>
+        <!-- dynamic content from google sheets will load here -->
     </div>
+    <!-- google form llnk
+    https://forms.gle/K5jYniyy5662ffM96 
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const URL = "https://script.google.com/macros/s/AKfycbzRgp3Vs7HzZACi-JFjvITl_jACTfLK3AM1eC7nDc0sisXgmNVZrXCW8mYHBAo6-WPL/exec";
+    
+            fetch(URL)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('latestpage');
+    
+                    data.reverse().forEach(article => { // Reversing the order
+                        let fileId = article.img.match(/[-\w]{25,}/)?.[0];
 
+                        const articleHTML = `
+                        <div class="article">
+                            <img src="https://lh3.googleusercontent.com/d/${fileId}" ></img>
+                            <div class="article-text">
+                                <h2 style="margin-bottom: 5px;">${article.title}</h2>
+                                <p><b>${article.date}</b></p>
+                                <p class="hidden-content" style="font-size: 20px;">${article.content}</p>
+                            </div>
+                            <button class="toggleContent">Read full article</button>
+                        </div>
+                        `;
+                        container.innerHTML += articleHTML;
+                    });
+                })
+                .catch(error => console.error("Error while fetching data", error));
+        });
+    </script>
+    
     <footer>
         <section class="footer1">
             <div id="footer1">
